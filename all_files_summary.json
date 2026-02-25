@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Motoko actor that defines Plant types and exposes `assessPlant` and `uploadPhoto` endpoints; plant needs and emotions are determined deterministically from the photo blob's byte size.",
+  "feature_evidence.json": "Feature evidence report confirming that `PlantResults.tsx` was updated to prominently display the plant's emotional state with emoji, bold label, and age-appropriate message above the need-detection cards.",
+  "frontend-file-summaries.txt": "JSON document containing one-sentence summaries of each frontend source file, describing their roles in the Plant Feelings app.",
+  "frontend/index.css": "Tailwind base CSS file defining OKLCH CSS custom properties for light and dark theme color tokens used throughout the app.",
+  "frontend/index.html": "Minimal HTML entry point titled 'Plant Feelings' that mounts the React app via `src/main.tsx`.",
+  "frontend/src/App.tsx": "Root React component that wraps `PlantScanner` inside the `Layout` component for consistent page theming.",
+  "frontend/src/components/Layout.tsx": "Full-page layout wrapper with a botanical background, animated decorative elements, a `CuteTree` header component with sparkle/heart accents, and a footer with a QR code.",
+  "frontend/src/components/LoadingSpinner.tsx": "Animated loading screen featuring spinning leaf emojis, a bouncing glowing tree, sparkle accents, pulsing dots, and a fun plant fact message.",
+  "frontend/src/components/PlantResults.tsx": "Results component that displays a prominent emotion card (large emoji, bold child-friendly label, age-appropriate message) at the top, followed by five NeedCard components for sunlight, water, soil, air quality, and pest detection.",
+  "frontend/src/components/QRCodeCanvas.tsx": "A self-contained React component that implements a minimal QR code generator (adapted from nayuki/qrcodegen) and renders the resulting QR code onto an HTML canvas element.",
+  "frontend/src/hooks/useActor.ts": "A React hook that creates and caches an ICP backend actor (authenticated or anonymous) using React Query, and invalidates dependent queries whenever the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an InternetIdentityProvider context and useInternetIdentity hook for managing Internet Identity authentication via AuthClient, exposing login, logout, and identity state.",
+  "frontend/src/hooks/useQueries.ts": "Exports a useAssessPlant mutation hook that sends an image as bytes to the backend actor's assessPlant method and returns the resulting Plant data.",
+  "frontend/src/index.css": "Global stylesheet that imports Google Fonts, configures Tailwind base/components/utilities, defines a nature-themed OKLCH CSS variable palette for light and dark modes, and declares custom keyframe animations.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app with QueryClientProvider and InternetIdentityProvider wrappers around the root App component.",
+  "frontend/src/pages/PlantScanner.tsx": "A page component that lets users upload or capture a plant photo, sends it to the backend for assessment via useAssessPlant, and displays loading, error, or results states accordingly.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration that extends the theme with custom OKLCH-based color tokens, nature palette, custom border radii, box shadows, and registers typography, container-queries, and animate plugins.",
+  "project_state.json": "Tracks the project state (version 23) for a child-friendly plant health app that uses AI to analyze plant photos and display emoji-based mood/health results with motivational messages. Contains architectural notes, existing features, and known issues."
+}

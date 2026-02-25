@@ -1,0 +1,58 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T06:40:35.531Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-19",
+        "summary": "Update the backend `assessPlant` function in `backend/main.mo` to add an `emotion` field to the `Plant` record. The emotion must be one of five values: 'angry', 'sad', 'happy', 'worried', or 'upset'. Use deterministic logic (e.g., based on image blob size or a simple hash) to vary the emotion realistically across different inputs.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Update the `useAssessPlant` mutation hook in `frontend/src/hooks/useQueries.ts` to expose the new `emotion` field from the backend Plant response.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Update the `PlantResults` component in `frontend/src/components/PlantResults.tsx` to prominently display the plant's emotional state. Show a large emoji corresponding to each emotion (😠 angry, 😢 sad, 😊 happy, 😟 worried, 😤 upset), a bold child-friendly emotion label (e.g., 'Your plant is HAPPY! 😊'), and a short age-appropriate message for each emotion. This emotional display should appear at the top of the results, above the five need-detection cards.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/PlantResults.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/PlantResults.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/PlantResults.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "kind": "build_request",
+  "title": "Add emotional state (angry, sad, happy, worried, upset) to plant health results",
+  "projectName": "Plant Feelings",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-19",
+      "text": "Update the backend `assessPlant` function in `backend/main.mo` to add an `emotion` field to the `Plant` record. The emotion must be one of five values: 'angry', 'sad', 'happy', 'worried', or 'upset'. Use deterministic logic (e.g., based on image blob size or a simple hash) to vary the emotion realistically across different inputs.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "IT should tell if the plant is angry sad or happy or worried and upset"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Plant record returned by assessPlant includes an `emotion` field.",
+        "The emotion value is one of exactly: 'angry', 'sad', 'happy', 'worried', 'upset'.",
+        "Different image inputs (varying blob sizes) produce different emotion values deterministically.",
+        "The backend compiles and deploys without errors."
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Update the `useAssessPlant` mutation hook in `frontend/src/hooks/useQueries.ts` to expose the new `emotion` field from the backend Plant response.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "IT should tell if the plant is angry sad or happy or worried and upset"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Plant type/interface used in the frontend includes an `emotion` field of type string.",
+        "The `useAssessPlant` hook correctly passes through the `emotion` value returned by the backend.",
+        "No TypeScript compilation errors related to the Plant type."
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Update the `PlantResults` component in `frontend/src/components/PlantResults.tsx` to prominently display the plant's emotional state. Show a large emoji corresponding to each emotion (😠 angry, 😢 sad, 😊 happy, 😟 worried, 😤 upset), a bold child-friendly emotion label (e.g., 'Your plant is HAPPY! 😊'), and a short age-appropriate message for each emotion. This emotional display should appear at the top of the results, above the five need-detection cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "IT should tell if the plant is angry sad or happy or worried and upset"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A large animated emoji is shown matching the plant's current emotion (angry=😠, sad=😢, happy=😊, worried=😟, upset=😤).",
+        "A bold emotion label is displayed (e.g., 'Your plant is ANGRY! 😠') using child-friendly language.",
+        "A short, upbeat, child-appropriate message accompanies each emotion (e.g., 'Your plant needs some love today! Give it a hug! 💚').",
+        "The emotion section appears prominently above the five need-detection cards.",
+        "All text in the emotion section renders in black, consistent with the existing theme.",
+        "The component renders correctly for all five emotion values without errors."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files listed in frontend.immutablePaths.",
+    "Maintain the existing nature-inspired green theme with black text.",
+    "Preserve all existing five need-detection cards (sunlight, soil, water, air, pest) in PlantResults."
+  ],
+  "nonGoals": [
+    "Replacing or removing the five plant need-detection cards.",
+    "Using real AI/ML to determine plant emotion — deterministic logic is sufficient.",
+    "Changing the overall visual theme or color palette."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

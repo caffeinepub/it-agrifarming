@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-plantresults-component-in-frontend-src-components-plantresults-tsx-to-prominently-display-the-plant-s-emotional-state-show-a-large-emoji-corresponding-to-each-emotion-angry-sad-happy-worried-upset-a-bold-child-friendly-emotion-label-e-g-your-plant-is-happy-and-a-short-age-appropriate-message-for-each-emotion-this-emotional-display-should-appear-at-the-top-of-the-results-above-the-five-need-detection-cards",
+      "featureTitle": "Update the `PlantResults` component in `frontend/src/components/PlantResults.tsx` to prominently display the plant's emotional state. Show a large emoji corresponding to each emotion (😠 angry, 😢 sad, 😊 happy, 😟 worried, 😤 upset), a bold child-friendly emotion label (e.g., 'Your plant is HAPPY! 😊'), and a short age-appropriate message for each emotion. This emotional display should appear at the top of the results, above the five need-detection cards.",
+      "files": [
+        "frontend/src/components/PlantResults.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

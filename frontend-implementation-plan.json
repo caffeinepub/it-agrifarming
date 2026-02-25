@@ -1,0 +1,42 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add emotional state (angry, sad, happy, worried, upset) to plant health results",
+  "requirements": [
+    {
+      "id": "REQ-20",
+      "summary": "Update the Plant type and useAssessPlant mutation hook to expose the emotion field from the backend response",
+      "acceptanceCriteria": [
+        "The Plant type/interface used in the frontend includes an `emotion` field of type string.",
+        "The `useAssessPlant` hook correctly passes through the `emotion` value returned by the backend.",
+        "No TypeScript compilation errors related to the Plant type."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Update the useAssessPlant mutation hook to ensure the Plant interface includes the emotion field. The backend already returns PlantEmotion enum via the Plant type in backend.d.ts, so verify that the mutation correctly passes through this emotion value in the returned Plant object without transformation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Display the plant's emotional state prominently in PlantResults with a large animated emoji, bold child-friendly label, and age-appropriate message",
+      "acceptanceCriteria": [
+        "A large animated emoji is shown matching the plant's current emotion (angry=😠, sad=😢, happy=😊, worried=😟, upset=😤).",
+        "A bold emotion label is displayed (e.g., 'Your plant is ANGRY! 😠') using child-friendly language.",
+        "A short, upbeat, child-appropriate message accompanies each emotion (e.g., 'Your plant needs some love today! Give it a hug! 💚').",
+        "The emotion section appears prominently above the five need-detection cards.",
+        "All text in the emotion section renders in black, consistent with the existing theme.",
+        "The component renders correctly for all five emotion values without errors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PlantResults.tsx",
+          "operation": "modify",
+          "description": "Add a prominent emotion display section at the top of the PlantResults component, before the five need-detection cards. Create a mapping from the emotion enum values (sad, happy, angry, worried, upset) to corresponding emojis (😢, 😊, 😠, 😟, 😤), bold child-friendly labels (e.g., 'Your plant is HAPPY! 😊'), and short age-appropriate upbeat messages for each emotion state. Render a large animated emoji (using CSS animation like bounce or pulse), the bold label, and the message in a visually distinct card or section at the top. Ensure all text is black to match the existing nature-inspired theme. Preserve all five existing need-detection cards below the emotion section unchanged."
+        }
+      ]
+    }
+  ]
+}

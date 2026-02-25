@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.25rem;
+
+    /* Nature Green palette — lush greens, warm earthy tones */
+    --background: 0.97 0.018 130;
+    --foreground: 0 0 0;
+
+    --card: 0.99 0.010 120;
+    --card-foreground: 0 0 0;
+
+    --popover: 0.99 0.010 120;
+    --popover-foreground: 0 0 0;
+
+    --primary: 0.50 0.18 145;
+    --primary-foreground: 0.99 0.005 120;
+
+    --secondary: 0.92 0.05 130;
+    --secondary-foreground: 0 0 0;
+
+    --muted: 0.93 0.03 125;
+    --muted-foreground: 0 0 0;
+
+    --accent: 0.68 0.14 60;
+    --accent-foreground: 0 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.04 130;
+    --input: 0.88 0.04 130;
+    --ring: 0.50 0.18 145;
+
+    /* Nature palette tokens */
+    --nature-green: 0.55 0.20 145;
+    --nature-sage: 0.72 0.12 145;
+    --nature-mint: 0.82 0.10 160;
+    --nature-earth: 0.62 0.12 60;
+    --nature-forest: 0.38 0.14 145;
+
+    --chart-1: 0.55 0.20 145;
+    --chart-2: 0.72 0.12 145;
+    --chart-3: 0.68 0.14 60;
+    --chart-4: 0.82 0.10 160;
+    --chart-5: 0.38 0.14 145;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0 0 0;
+    --sidebar-primary: 0.50 0.18 145;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  .dark {
+    --background: 0.14 0.05 145;
+    --foreground: 0 0 0;
+
+    --card: 0.18 0.06 145;
+    --card-foreground: 0 0 0;
+
+    --popover: 0.20 0.06 145;
+    --popover-foreground: 0 0 0;
+
+    --primary: 0.62 0.20 145;
+    --primary-foreground: 0.14 0.05 145;
+
+    --secondary: 0.24 0.07 145;
+    --secondary-foreground: 0 0 0;
+
+    --muted: 0.24 0.06 145;
+    --muted-foreground: 0 0 0;
+
+    --accent: 0.58 0.14 60;
+    --accent-foreground: 0 0 0;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.62 0.20 145;
+
+    --nature-green: 0.65 0.20 145;
+    --nature-sage: 0.75 0.12 145;
+    --nature-mint: 0.82 0.10 160;
+    --nature-earth: 0.68 0.14 60;
+    --nature-forest: 0.45 0.16 145;
+
+    --sidebar: 0.205 0 0;
+    --sidebar-foreground: 0 0 0;
+    --sidebar-primary: 0.62 0.20 145;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.269 0 0;
+    --sidebar-accent-foreground: 0 0 0;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.439 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-fredoka;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-fredoka {
+    font-family: 'Fredoka', sans-serif;
+  }
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+/* Emoji bounce animation */
+@keyframes emoji-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-12px) scale(1.05); }
+  50% { transform: translateY(-6px) scale(1.02); }
+  75% { transform: translateY(-10px) scale(1.04); }
+}
+
+@keyframes emoji-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes star-spin {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.1); }
+}
+
+@keyframes float-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-leaf {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Celebration: emojis float up from bottom */
+@keyframes celebrate-float {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(-10deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-15vh) scale(1.1) rotate(5deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-65vh) scale(1) rotate(-8deg);
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.8) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+/* Sparkle burst: fade in, scale up, then fade out */
+@keyframes sparkle-burst {
+  0% { opacity: 0; transform: scale(0.3) rotate(-15deg); }
+  30% { opacity: 0.85; transform: scale(1.15) rotate(5deg); }
+  60% { opacity: 0.7; transform: scale(1) rotate(-3deg); }
+  100% { opacity: 0; transform: scale(1.3) rotate(10deg); }
+}
+
+/* Hero character — gentle sway, no big bounce */
+@keyframes hero-sway {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+/* Motivational message pop-in */
+@keyframes motivation-pop {
+  0% { opacity: 0; transform: scale(0.85) translateY(10px); }
+  60% { transform: scale(1.04) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Gentle float for decorative elements — reduced movement */
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.02); }
+}
+
+/* Gentle float for the plant mascot character */
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Cute tree wiggle — side-to-side sway */
+@keyframes tree-wiggle {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  25% { transform: rotate(3deg) scale(1.04); }
+  50% { transform: rotate(-2deg) scale(1.02); }
+  75% { transform: rotate(2deg) scale(1.03); }
+}
+
+/* Cute tree bounce — bouncy up-down with slight scale */
+@keyframes tree-bounce {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+  20% { transform: translateY(-8px) scale(1.06) rotate(-2deg); }
+  40% { transform: translateY(-4px) scale(1.03) rotate(1deg); }
+  60% { transform: translateY(-6px) scale(1.05) rotate(-1deg); }
+  80% { transform: translateY(-2px) scale(1.01) rotate(0.5deg); }
+}
+
+/* Sparkle twinkle — for accent emojis around the tree */
+@keyframes sparkle-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(-20deg); }
+  30% { opacity: 1; transform: scale(1.2) rotate(10deg); }
+  60% { opacity: 0.8; transform: scale(0.9) rotate(-5deg); }
+}
+
+/* Heart float — hearts gently rise */
+@keyframes heart-float {
+  0% { opacity: 0; transform: translateY(0) scale(0.6); }
+  30% { opacity: 1; transform: translateY(-8px) scale(1.1); }
+  70% { opacity: 0.8; transform: translateY(-14px) scale(1); }
+  100% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+}
+
+/* Glow pulse for the tree container */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.55 0.20 145 / 0); }
+  50% { box-shadow: 0 0 18px 6px oklch(0.55 0.20 145 / 0.25); }
+}
+
+/* Orbit spin for accent emojis around the tree */
+@keyframes orbit-accent {
+  0% { transform: rotate(0deg) translateX(28px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+
+.animate-emoji-bounce {
+  animation: emoji-bounce 2s ease-in-out infinite;
+}
+
+.animate-emoji-pulse {
+  animation: emoji-pulse 1.5s ease-in-out infinite;
+}
+
+.animate-star-spin {
+  animation: star-spin 3s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 0.5s ease-out forwards;
+}
+
+.animate-spin-leaf {
+  animation: spin-leaf 1.2s linear infinite;
+}
+
+.animate-celebrate-float {
+  animation: celebrate-float 2.5s ease-out forwards;
+}
+
+.animate-sparkle-burst {
+  animation: sparkle-burst 1.8s ease-out forwards;
+}
+
+.animate-hero-bounce {
+  animation: hero-sway 3.5s ease-in-out infinite;
+}
+
+.animate-motivation-pop {
+  animation: motivation-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+
+.animate-bubble-float {
+  animation: bubble-float 5s ease-in-out infinite;
+}
+
+.animate-mascot-float {
+  animation: mascot-float 4s ease-in-out infinite;
+}
+
+/* Cute tree animations */
+.animate-tree-wiggle {
+  animation: tree-wiggle 2.8s ease-in-out infinite;
+}
+
+.animate-tree-bounce {
+  animation: tree-bounce 2.2s ease-in-out infinite;
+}
+
+.animate-sparkle-twinkle {
+  animation: sparkle-twinkle 2s ease-in-out infinite;
+}
+
+.animate-heart-float {
+  animation: heart-float 2.4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.card-float-1 { animation: float-up 0.4s ease-out 0.1s both; }
+.card-float-2 { animation: float-up 0.4s ease-out 0.2s both; }
+.card-float-3 { animation: float-up 0.4s ease-out 0.3s both; }
+.card-float-4 { animation: float-up 0.4s ease-out 0.4s both; }
+
+.bg-botanical {
+  background-image: url('/assets/generated/plant-bg.dim_1920x1080.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.glass-card {
+  background: oklch(0.99 0.010 120 / 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.dark .glass-card {
+  background: oklch(0.18 0.06 145 / 0.88);
+}
+
+/* Cute tree glow wrapper */
+.tree-glow {
+  filter: drop-shadow(0 0 8px oklch(0.55 0.20 145 / 0.45));
+}
+
+.tree-glow-lg {
+  filter: drop-shadow(0 0 14px oklch(0.55 0.20 145 / 0.55));
+}

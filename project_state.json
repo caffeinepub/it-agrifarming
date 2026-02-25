@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 23,
+  "summary": "A plant health app where users (including children) can scan or upload a photo of any size of a plant. The app analyzes the image and displays an emoji representing how the plant 'feels' (its health status), along with fun facts and motivational messages encouraging children to take care of their plants.",
+  "architectural_notes": [
+    "Use a plant/image recognition AI API (e.g., Plant.id or similar) to analyze plant health from photos",
+    "UI should be friendly and fun with emoji-driven plant mood display",
+    "App should be child-friendly with motivational, encouraging language aimed at young users",
+    "Plant analysis must cover five dimensions: sunlight needs, soil condition, water needs, air quality, and pest detection",
+    "Plant emotional states should include: angry, sad, happy, worried, and upset — used as the primary health/mood status shown to users"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-frontend-page-where-the-user-can-either-upload-an-image-from-their-device-or-capture-one-using-their-device-camera-display-a-live-preview-of-the-selected-image-before-submission",
+      "title": "Build a frontend page where the user can either upload an image from their device or capture one using their device camera. Display a live preview of the selected image before submission.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-after-the-backend-returns-results-display-a-large-animated-emoji-representing-how-the-plant-feels-a-bold-health-status-label-e-g-your-plant-is-thirsty-and-a-list-of-fun-facts-presented-as-individual-cards-or-styled-list-items",
+      "title": "After the backend returns results, display a large animated emoji representing how the plant feels, a bold health status label (e.g., 'Your plant is THIRSTY! 💧'), and a list of fun facts presented as individual cards or styled list items.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-vibrant-nature-inspired-visual-theme-throughout-the-app-lush-greens-warm-earthy-tones-and-playful-rounded-typography-use-botanical-illustrations-or-leaf-patterns-as-decorative-backgrounds-the-overall-feel-should-be-friendly-fun-and-suitable-for-plant-lovers-of-all-ages",
+      "title": "Apply a vibrant, nature-inspired visual theme throughout the app: lush greens, warm earthy tones, and playful rounded typography. Use botanical illustrations or leaf patterns as decorative backgrounds. The overall feel should be friendly, fun, and suitable for plant lovers of all ages.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-any-file-size-restrictions-on-image-uploads-so-that-plant-photos-of-all-sizes-small-snapshots-to-large-high-resolution-images-are-accepted-without-error-the-image-preview-and-submission-flow-must-work-correctly-regardless-of-the-uploaded-file-s-size",
+      "title": "Remove any file size restrictions on image uploads so that plant photos of all sizes (small snapshots to large high-resolution images) are accepted without error. The image preview and submission flow must work correctly regardless of the uploaded file's size.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-child-friendly-motivational-messages-throughout-the-app-to-encourage-kids-to-take-care-of-their-plants-each-health-status-result-happy-thirsty-sunburned-wilting-thriving-must-include-at-least-one-upbeat-age-appropriate-motivational-message-directed-at-the-child-e-g-great-job-watering-your-plant-today-keep-it-up-plant-hero-these-messages-should-appear-prominently-on-the-results-screen-alongside-the-existing-emoji-status-label-and-fun-fact-cards",
+      "title": "Add child-friendly motivational messages throughout the app to encourage kids to take care of their plants. Each health status result (happy, thirsty, sunburned, wilting, thriving) must include at least one upbeat, age-appropriate motivational message directed at the child (e.g., 'Great job watering your plant today! 🌧️ Keep it up, plant hero!'). These messages should appear prominently on the results screen alongside the existing emoji, status label, and fun fact cards.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-overall-ui-playfulness-and-child-appeal-by-adding-fun-micro-interactions-and-visual-flourishes-use-bouncy-button-press-animations-celebratory-confetti-or-sparkle-effects-when-results-load-and-playful-illustrated-plant-character-stickers-or-icons-next-to-the-status-label-the-experience-should-feel-rewarding-and-exciting-for-young-users",
+      "title": "Enhance the overall UI playfulness and child-appeal by adding fun micro-interactions and visual flourishes: use bouncy button press animations, celebratory confetti or sparkle effects when results load, and playful illustrated plant character stickers or icons next to the status label. The experience should feel rewarding and exciting for young users.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-nature-inspired-green-earthy-theme-with-a-fresh-vibrant-visual-redesign-apply-a-new-cohesive-color-palette-updated-typography-styles-and-refreshed-background-decorations-throughout-the-app-layout-plantscanner-plantresults-loadingspinner-the-new-theme-must-maintain-child-friendliness-and-playfulness-while-feeling-distinctly-different-from-the-existing-lush-green-botanical-aesthetic",
+      "title": "Replace the current nature-inspired green/earthy theme with a fresh, vibrant visual redesign. Apply a new cohesive color palette, updated typography styles, and refreshed background decorations throughout the app (Layout, PlantScanner, PlantResults, LoadingSpinner). The new theme must maintain child-friendliness and playfulness while feeling distinctly different from the existing lush-green botanical aesthetic.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-cosmic-candy-pastel-purple-theme-with-a-lush-green-nature-inspired-color-palette-throughout-the-app-update-css-custom-properties-in-index-css-tailwind-config-color-tokens-and-all-themed-components-layout-plantscanner-plantresults-loadingspinner-to-use-vibrant-greens-warm-earthy-tones-and-botanical-style-decorative-accents-maintain-child-friendliness-playfulness-rounded-typography-and-all-existing-micro-interactions",
+      "title": "Replace the current 'Cosmic Candy' pastel/purple theme with a lush green, nature-inspired color palette throughout the app. Update CSS custom properties in index.css, Tailwind config color tokens, and all themed components (Layout, PlantScanner, PlantResults, LoadingSpinner) to use vibrant greens, warm earthy tones, and botanical-style decorative accents. Maintain child-friendliness, playfulness, rounded typography, and all existing micro-interactions.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-app-title-text-in-the-layout-header-bold-update-the-header-typography-so-the-plant-feelings-title-renders-with-a-bold-font-weight-visually-distinct-and-prominent",
+      "title": "Make the app title text in the Layout header bold. Update the header typography so the 'Plant Feelings' title renders with a bold font weight, visually distinct and prominent.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-qr-code-to-the-app-that-encodes-the-deployed-app-s-url-display-the-qr-code-in-the-layout-footer-or-header-area-so-users-can-easily-scan-it-to-share-or-access-the-app-on-another-device-use-a-client-side-qr-code-generation-library-e-g-qrcode-react-and-render-it-as-a-small-scannable-code",
+      "title": "Add a QR code to the app that encodes the deployed app's URL. Display the QR code in the Layout footer or header area so users can easily scan it to share or access the app on another device. Use a client-side QR code generation library (e.g., qrcode.react) and render it as a small, scannable code.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-text-colors-throughout-the-app-to-black-this-includes-headings-body-text-labels-button-text-card-content-motivational-messages-fun-fact-text-status-labels-footer-text-and-any-other-visible-text-elements-across-all-components-layout-plantscanner-plantresults-loadingspinner-qrcodecanvas-override-any-existing-color-tokens-or-tailwind-utility-classes-that-render-text-in-non-black-colors-e-g-greens-whites-grays-used-as-foreground-text-so-that-all-user-facing-text-renders-as-black-000000-or-equivalent",
+      "title": "Update all text colors throughout the app to black. This includes headings, body text, labels, button text, card content, motivational messages, fun fact text, status labels, footer text, and any other visible text elements across all components (Layout, PlantScanner, PlantResults, LoadingSpinner, QRCodeCanvas). Override any existing color tokens or Tailwind utility classes that render text in non-black colors (e.g., greens, whites, grays used as foreground text) so that all user-facing text renders as black (#000000 or equivalent).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-tone-down-the-cactus-plant-character-illustration-used-in-the-app-so-it-appears-more-natural-and-less-exaggerated-reduce-any-oversized-cartoonish-or-extreme-visual-properties-e-g-overly-large-spines-exaggerated-proportions-intense-colors-on-the-cactus-emoji-icon-or-illustration-so-it-looks-more-like-a-normal-recognizable-cactus-while-remaining-friendly-and-child-appropriate",
+      "title": "Tone down the cactus plant character/illustration used in the app so it appears more natural and less exaggerated. Reduce any oversized, cartoonish, or extreme visual properties (e.g., overly large spines, exaggerated proportions, intense colors) on the cactus emoji, icon, or illustration so it looks more like a normal, recognizable cactus while remaining friendly and child-appropriate.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-instances-of-the-cactus-plant-character-illustration-in-the-app-with-a-willow-tree-character-this-includes-any-cactus-emoji-cactus-themed-icons-cactus-illustrations-or-cactus-related-references-used-as-the-plant-hero-character-or-decorative-plant-icon-in-plantresults-plantscanner-layout-and-loadingspinner-components-substitute-with-an-appropriate-willow-tree-emoji-or-or-willow-tree-illustration-ensuring-the-replacement-looks-friendly-and-child-appropriate",
+      "title": "Replace all instances of the cactus plant character/illustration in the app with a willow tree character. This includes any cactus emoji (🌵), cactus-themed icons, cactus illustrations, or cactus-related references used as the plant hero character or decorative plant icon in PlantResults, PlantScanner, Layout, and LoadingSpinner components. Substitute with an appropriate willow tree emoji (🌳 or 🎋) or willow tree illustration, ensuring the replacement looks friendly and child-appropriate.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-willow-tree-character-cuter-and-more-adorable-throughout-the-app-in-layout-loadingspinner-plantresults-and-plantscanner-components-enhance-the-willow-tree-s-visual-presentation-by-adding-a-gentle-bounce-or-wiggle-animation-surrounding-it-with-small-decorative-accents-e-g-sparkle-heart-or-flower-emojis-increasing-its-display-size-slightly-and-optionally-adding-a-soft-drop-shadow-or-glow-effect-to-make-it-feel-warm-and-endearing-the-overall-effect-should-be-charming-child-appealing-and-joyful-without-being-overwhelming",
+      "title": "Make the willow tree character (🌳) cuter and more adorable throughout the app. In Layout, LoadingSpinner, PlantResults, and PlantScanner components, enhance the willow tree's visual presentation by adding a gentle bounce or wiggle animation, surrounding it with small decorative accents (e.g., sparkle ✨, heart 💚, or flower 🌸 emojis), increasing its display size slightly, and optionally adding a soft drop-shadow or glow effect to make it feel warm and endearing. The overall effect should be charming, child-appealing, and joyful without being overwhelming.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-useassessplant-mutation-hook-in-usequeries-ts-to-handle-and-expose-the-new-backend-response-fields-sunlight-soil-water-air-and-pest-detection-results",
+      "title": "Update the useAssessPlant mutation hook in useQueries.ts to handle and expose the new backend response fields: sunlight, soil, water, air, and pest detection results.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-plantresults-component-to-display-the-five-plant-need-detection-results-sunlight-soil-water-air-quality-pest-presence-as-individual-styled-cards-or-sections-each-card-must-show-an-appropriate-emoji-icon-e-g-for-sunlight-for-soil-for-water-for-air-for-pests-the-detection-status-and-its-descriptive-message-cards-should-use-child-friendly-language-and-maintain-the-existing-nature-inspired-green-theme-with-black-text",
+      "title": "Update the PlantResults component to display the five plant need detection results (sunlight, soil, water, air quality, pest presence) as individual styled cards or sections. Each card must show an appropriate emoji icon (e.g., ☀️ for sunlight, 🌱 for soil, 💧 for water, 🌬️ for air, 🐛 for pests), the detection status, and its descriptive message. Cards should use child-friendly language and maintain the existing nature-inspired green theme with black text.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-plantresults-component-in-frontend-src-components-plantresults-tsx-to-prominently-display-the-plant-s-emotional-state-show-a-large-emoji-corresponding-to-each-emotion-angry-sad-happy-worried-upset-a-bold-child-friendly-emotion-label-e-g-your-plant-is-happy-and-a-short-age-appropriate-message-for-each-emotion-this-emotional-display-should-appear-at-the-top-of-the-results-above-the-five-need-detection-cards",
+      "title": "Update the `PlantResults` component in `frontend/src/components/PlantResults.tsx` to prominently display the plant's emotional state. Show a large emoji corresponding to each emotion (😠 angry, 😢 sad, 😊 happy, 😟 worried, 😤 upset), a bold child-friendly emotion label (e.g., 'Your plant is HAPPY! 😊'), and a short age-appropriate message for each emotion. This emotional display should appear at the top of the results, above the five need-detection cards.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Camera scan or image upload to capture plant photo",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "AI-based plant health analysis from uploaded/scanned image",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Display an emoji representing how the plant feels (health status)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Show fun facts about what the plant needs (water, sunlight, nutrients, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend actor that accepts a plant image (as base64-encoded blob) and returns a simulated plant health assessment: a health status string (e.g., 'happy', 'thirsty', 'sunburned', 'wilting', 'thriving'), a corresponding emoji, and an array of 3–5 fun fact strings about what the plant needs (water, sunlight, nutrients, etc.). Use deterministic logic based on image size or simple hashing to vary results realistically.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Support uploading plant photos of all sizes without restriction",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add motivational messages and child-friendly content to encourage kids to take care of their plants",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Change the app theme (visual redesign)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add QR code for the app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Make all app text black throughout the UI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Replace the cactus character/illustration with a willow tree character throughout the app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Make the willow tree character cuter and more adorable in appearance",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Plant health analysis should detect specific needs: sunlight, soil, water, air quality, and pest presence",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Update the backend Plant type and assessPlant logic to deterministically detect and return five specific need categories: sunlight, soil, water, air quality, and pest presence. Each category should have a status (e.g., 'good', 'needs attention') and a short descriptive message. Vary the results realistically based on image blob size or simple hashing.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Plant health results should express the plant's emotional state as: angry, sad, happy, worried, or upset — displayed as the plant's 'feelings' status",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Update the backend `assessPlant` function in `backend/main.mo` to add an `emotion` field to the `Plant` record. The emotion must be one of five values: 'angry', 'sad', 'happy', 'worried', or 'upset'. Use deterministic logic (e.g., based on image blob size or a simple hash) to vary the emotion realistically across different inputs.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Update the `useAssessPlant` mutation hook in `frontend/src/hooks/useQueries.ts` to expose the new `emotion` field from the backend Plant response.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Plant Feelings",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
